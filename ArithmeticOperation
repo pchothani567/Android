@@ -1,0 +1,101 @@
+package com.example.arithmeticoperation;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText et1;
+    EditText et2;
+    Button btn,Sub,Mul,Div;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        et1=findViewById(R.id.num1);
+        et2=findViewById(R.id.num2);
+        btn=findViewById(R.id.btnn);
+        Sub=findViewById(R.id.Subb);
+        Mul=findViewById(R.id.Mull);
+        Div=findViewById(R.id.Divv);
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String num1=et1.getText().toString();
+                String num2=et2.getText().toString();
+
+                int a1=Integer.parseInt(num1);
+                int a2=Integer.parseInt(num2);
+
+                int sum= a1+a2;
+                String t=String.valueOf(sum);
+
+
+                Toast.makeText(MainActivity.this,"Addition : "+ t, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        Sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String num1=et1.getText().toString();
+                String num2=et2.getText().toString();
+
+                int a1=Integer.parseInt(num1);
+                int a2=Integer.parseInt(num2);
+
+                int sub=a1-a2;
+                String s=String.valueOf(sub);
+
+                Toast.makeText(MainActivity.this ,"Substraction : "+s,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String num1=et1.getText().toString();
+                String num2=et2.getText().toString();
+
+                int a1=Integer.parseInt(num1);
+                int a2=Integer.parseInt(num2);
+
+                int mul=a1*a2;
+                String m=String.valueOf(mul);
+
+                Toast.makeText(MainActivity.this, "Multilplication : "+m, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        Div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String num1=et1.getText().toString();
+                String num2=et2.getText().toString();
+
+                int a1=Integer.parseInt(num1);
+                int a2=Integer.parseInt(num2);
+
+                int Div=a1/a2;
+                String d=String.valueOf(Div);
+
+                Toast.makeText(MainActivity.this, "Division :  "+d, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}
